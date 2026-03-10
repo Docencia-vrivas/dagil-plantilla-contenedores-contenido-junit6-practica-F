@@ -1,11 +1,21 @@
+/**
+ * Interface para las clases contenedoras.
+ * @author Víctor Rivas <vrivas@ujaen.es>
+ * @date 10-mar-2026
+*/
+
 package es.vrivas.dagil;
 
-public interface ContenedorInterface<Contenido> {
+/**
+ * Interface para las clases contenedoras.
+ * @param <T_Contenido> El tipo de los objetos que se van a almacenar en el contenedor.
+ */
+public interface ContenedorInterface<T_Contenido> {
     /**
      * Devuelve el número de objetos que hay en el contenedor.
      * @return Número de objetos contenidos en el contenedor.
      */
-    public int getNumObjetosContenidos();
+    int getNumObjetosContenidos();
 
     /**
      * Devuelve el objeto que que hay en la posición indicada.
@@ -13,20 +23,20 @@ public interface ContenedorInterface<Contenido> {
      * @return El objeto que hay en la posición indicada.
      * @exception IllegalArgumentException Si la posición no es válida.
      */
-    public Contenido getPorPosicion(final int posicion) throws IllegalArgumentException;
+    T_Contenido getPorPosicion(int posicion) throws IllegalArgumentException;
 
     /**
      * Devuelve el objeto que tiene el id indicado.
      * @param id Id del objeto a devolver.
      * @return El objeto que tiene el id indicado o null si no existe.
     */
-    public Contenido getPorId(final int id);
+    T_Contenido getPorId(int id);
 
     /**
      * Devuelve el conjunto de objetos que hay en el contenedor en forma de string.
      * @return Cadena con el conjunto de objetos que hay en el contenedor en formato JSON.
      */
-    public String toString();
+    String toString();
 
     /**
      * Añade un objeto al contenedor.
@@ -36,7 +46,7 @@ public interface ContenedorInterface<Contenido> {
      * @exception IllegalArgumentException Si el objeto es NULL.
      * @return La propia instancia de Contenedor.
      */
-    public ContenedorPlantilla add(final Contenido objeto) throws IllegalArgumentException;
+    ContenedorInterface<T_Contenido> add(T_Contenido objeto) throws IllegalArgumentException;
 
     /**
      * Elimina un objeto del contenedor.
@@ -45,6 +55,6 @@ public interface ContenedorInterface<Contenido> {
      * @exception IllegalArgumentException Si el objeto es NULL.
      * @return La propia instancia de Contenedor.
      */
-    public ContenedorPlantilla remove(final Contenido objeto) throws IllegalArgumentException;
+    ContenedorInterface<T_Contenido> remove(T_Contenido objeto) throws IllegalArgumentException;
 }
 

@@ -90,7 +90,7 @@ public class ContenedorPlantilla implements ContenedorInterface<ContenidoPlantil
         return this;
     }
 
-     /**
+    /**
      * Elimina un objeto del contenedor.
      * @param objeto Objeto a eliminar del contenedor.
      * @exception IllegalArgumentException Si el objeto no está en el contenedor.
@@ -107,7 +107,4 @@ public class ContenedorPlantilla implements ContenedorInterface<ContenidoPlantil
         objetosContenidos.remove(objeto);
         return this;
     }
-
-    
-
 }

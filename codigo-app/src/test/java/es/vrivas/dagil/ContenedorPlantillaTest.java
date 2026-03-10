@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
-import static org.junit.jupiter.api.Assertions.fail;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 /**
  * Clase de test para la clase Contenedor.
@@ -106,7 +106,6 @@ public class ContenedorPlantillaTest {
         assertSame(contenedor.getPorId(1), objeto);
     }
 
-
     // ---------------------------------------------------------------
     // Tests para el método remove
     // ---------------------------------------------------------------
@@ -157,7 +156,6 @@ public class ContenedorPlantillaTest {
                 .setId(1);
         contenedor.add(objeto);
         assertSame(contenedor, contenedor.remove(objeto));
-
     }
 
     /**
@@ -175,11 +173,13 @@ public class ContenedorPlantillaTest {
         assertSame(contenedor.getPorId(1), objeto);
         // Ahora compruebo que lo ha borrado
         contenedor.remove(objeto);
-        assertTrue( contenedor.getPorId(objeto.getId())==null );
+        assertTrue(contenedor.getPorId(objeto.getId()) == null);
     }
+    
     // ---------------------------------------------------------------
     // Tests para el método getNumObjetosContenidos
     // ---------------------------------------------------------------
+    
     /**
      * Un contenedor vacío devuelve 0 objetos contenidos.
      */
@@ -206,6 +206,7 @@ public class ContenedorPlantillaTest {
     // ---------------------------------------------------------------
     // Tests para el método getPorPosicion
     // ---------------------------------------------------------------
+
     /**
      * Excepción si la posición es negativa.
      */
@@ -219,7 +220,6 @@ public class ContenedorPlantillaTest {
         } catch (IllegalArgumentException e) {
             System.err.println("Excepción lanzada: " + e.getMessage() + " para posición -1.");
         }
-
     }
 
     /**
