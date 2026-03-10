@@ -1,12 +1,12 @@
 # Plantilla de una aplicación que usa clases Contenedor y Contenido.
 
-Este código permite generar una aplicación en la que se usan objetos contenedores que almacenan dentro un conjunto de 0 o más objetos contenidos. Utiliza un enfoque TDD basado en [JUnit 5][junit5].
+Este código permite generar una aplicación en la que se usan objetos contenedores que almacenan dentro un conjunto de 0 o más objetos contenidos. Utiliza un enfoque TDD basado en [JUnit 6][junit6].
 
 Creado a partir de un proyecto anterior que usaba JUnit 4, disponible en: https://github.com/UJA-Desarrollo-Agil/dagil-plantilla-contenedor-contenido
 
 <!-- ENLACES -->
 
-[junit5]: https://junit.org/junit5/
+[junit6]: https://junit.org/junit6/
 [UJA]: https://ujaen.es
 
 
@@ -50,7 +50,8 @@ _Captura de pantalla del tablero Trello con las HU seleccionadas (no olvidar pie
 
 **Diagrama UML**
 
-NO ES NECESARIO QUE HAGAS EL UML PARA ESTA EVALUACIÓN.
+<!-- TODO Realizar diagrama UML de las clases que existen hasta este momento en la aplicación -->
+_Diagrama UML de las clases que forman parte de la aplicación (no olvidar pie de imagen, con su correspondiente numeración)_
 
 **Interfaz de Usuario**
 
