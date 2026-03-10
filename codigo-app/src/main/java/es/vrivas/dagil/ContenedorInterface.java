@@ -1,6 +1,6 @@
 package es.vrivas.dagil;
 
-public interface ContenedorInterface {
+public interface ContenedorInterface<Contenido> {
     /**
      * Devuelve el número de objetos que hay en el contenedor.
      * @return Número de objetos contenidos en el contenedor.
@@ -36,7 +36,7 @@ public interface ContenedorInterface {
      * @exception IllegalArgumentException Si el objeto es NULL.
      * @return La propia instancia de Contenedor.
      */
-    public Contenedor add(final Contenido objeto) throws IllegalArgumentException;
+    public ContenedorPlantilla add(final Contenido objeto) throws IllegalArgumentException;
 
     /**
      * Elimina un objeto del contenedor.
@@ -45,6 +45,6 @@ public interface ContenedorInterface {
      * @exception IllegalArgumentException Si el objeto es NULL.
      * @return La propia instancia de Contenedor.
      */
-    public Contenedor remove(final Contenido objeto) throws IllegalArgumentException;
+    public ContenedorPlantilla remove(final Contenido objeto) throws IllegalArgumentException;
 }
 

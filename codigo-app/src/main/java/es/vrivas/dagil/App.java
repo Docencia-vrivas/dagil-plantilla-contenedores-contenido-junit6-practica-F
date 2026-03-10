@@ -1,7 +1,7 @@
 /**
  * Aplicación para usar las clases Contenedor y Contenido de forma genérica
  * @author Víctor Rivas <vrivas@ujaen.es>
- * @date 19-mar-2025
+ * @date 10-mar-2026
  */
 
 package es.vrivas.dagil;
@@ -26,7 +26,7 @@ public final class App {
     public static final int MAX_OBJETOS_PRUEBA = 6;
 
     /// Un objeto contenedor.
-    private static Contenedor contenedor = new Contenedor();
+    private static ContenedorPlantilla contenedor = new ContenedorPlantilla();
 
     /// Número de líneas de separación entre el menú y el texto superior.
     private static final int LINEAS_SEPARACION_MENU = 5;
@@ -40,7 +40,7 @@ public final class App {
     */
     public static int establecer_datos_de_prueba() {
         for (int i = 0; i < MAX_OBJETOS_PRUEBA; ++i) {
-            contenedor.add(new Contenido().setId(i).setDescripcion("Objeto " + i));
+            contenedor.add(new ContenidoPlantilla().setId(i).setDescripcion("Objeto " + i));
         }
         return contenedor.getNumObjetosContenidos();
     }

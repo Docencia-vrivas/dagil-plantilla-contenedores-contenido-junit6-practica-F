@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 /**
  * Clase de test para la clase Contenido.
  */
-public class ContenidoTest {
+public class ContenidoPlantillaTest {
 
     /**
      * Mensaje indicando que se inician los tests de la clase Contenido.
@@ -30,7 +30,7 @@ public class ContenidoTest {
      */
     @Test
     public void getId_inicia_a_0() {
-        assertEquals(0, new Contenido().getId());
+        assertEquals(0, new ContenidoPlantilla().getId());
     }
 
     /**
@@ -39,7 +39,7 @@ public class ContenidoTest {
     @Test
     public void getId_inicia_a_otro_valor() {
         // Comprueba otro id
-        Contenido objeto = new Contenido()
+        ContenidoPlantilla objeto = new ContenidoPlantilla()
                 .setId(1);
         assertEquals(1, objeto.getId());
     }
@@ -54,7 +54,7 @@ public class ContenidoTest {
     @Test
     public void getDescripcion_inicia_vacia() {
         // Comprueba que la descripción inicial es ""
-        assertEquals("", new Contenido().getDescripcion());
+        assertEquals("", new ContenidoPlantilla().getDescripcion());
     }
 
     /**
@@ -63,7 +63,7 @@ public class ContenidoTest {
     @Test
     public void getDescripcion_inicia_a_otro_valor() {
         // Comprueba otra descripción
-        Contenido objeto = new Contenido();
+        ContenidoPlantilla objeto = new ContenidoPlantilla();
         String nuevaDescripcion = "Nueva descripción";
         objeto.setDescripcion(nuevaDescripcion);
         assertEquals(nuevaDescripcion, objeto.getDescripcion());
@@ -81,7 +81,7 @@ public class ContenidoTest {
     public void setId_excepciones() {
         // Comprueba que no se puede establecer un id negativo
         try {
-            new Contenido().setId(-1);
+            new ContenidoPlantilla().setId(-1);
             fail();
         } catch (IllegalArgumentException e) {
             System.err.println("Excepción lanzada: " + e.getMessage() + " para id negativo");
@@ -94,7 +94,7 @@ public class ContenidoTest {
     @Test
     public void setId_asigna_id_y_devuelve_this() {
         // Comprueba que establece el id y que devuelve el propio objeto
-        Contenido objeto = new Contenido();
+        ContenidoPlantilla objeto = new ContenidoPlantilla();
         assertSame(objeto, objeto.setId(1));
         assertEquals(1, objeto.getId());
     }
@@ -109,7 +109,7 @@ public class ContenidoTest {
     @Test
     public void setDescripcion_excepciones() {
         // Comprueba que no se puede establecer una descripción nula
-        Contenido objeto = new Contenido();
+        ContenidoPlantilla objeto = new ContenidoPlantilla();
         try {
             objeto.setDescripcion(null);
             fail();
@@ -131,7 +131,7 @@ public class ContenidoTest {
      */
     @Test
     public void setDescripcion_descripcion_inicial_es_nula() {
-        Contenido objeto = new Contenido();
+        ContenidoPlantilla objeto = new ContenidoPlantilla();
         assertEquals("", objeto.getDescripcion());
     }
 
@@ -141,7 +141,7 @@ public class ContenidoTest {
     @Test
     public void setDescripcion_asigna_descripcion_y_devuelve_this() {
         // Comprueba que establece una descripción y que devuelve el mismo objeto
-        Contenido objeto = new Contenido();
+        ContenidoPlantilla objeto = new ContenidoPlantilla();
         assertSame(objeto, objeto.setDescripcion("Descripción"));
         assertEquals("Descripción", objeto.getDescripcion());
     }
@@ -154,7 +154,7 @@ public class ContenidoTest {
      */
     @Test
     public void toString_constructor_por_defecto() {
-        Contenido objeto = new Contenido();
+        ContenidoPlantilla objeto = new ContenidoPlantilla();
         assertEquals("{id: 0, descripcion: ''}", objeto.toString());
     }
 
@@ -164,7 +164,7 @@ public class ContenidoTest {
     @Test
     public void toString_objeto_con_datos() {
         // Comprueba que devuelve un string con el objeto en formato JSON para un objeto con id y descripción
-        Contenido objeto = new Contenido();
+        ContenidoPlantilla objeto = new ContenidoPlantilla();
         objeto.setId(1);
         objeto.setDescripcion("Descripción para testToString");
         assertEquals("{id: 1, descripcion: 'Descripción para testToString'}", objeto.toString());
