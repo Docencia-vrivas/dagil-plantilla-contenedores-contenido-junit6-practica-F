@@ -41,7 +41,7 @@ public class Contenido {
      * @exception IllegalArgumentException Si el valor es negativo.
      * @return La propia instancia de Contenido.
      */
-    public Contenido setId(final int valor) {
+    public Contenido setId(final int valor) throws IllegalArgumentException {
         if (valor < 0) {
             throw new IllegalArgumentException("El id del contenido no puede ser negativo");
         }
@@ -55,7 +55,7 @@ public class Contenido {
      * @exception IllegalArgumentException Si la descripción es nula o vacía.
      * @return La propia instancia de Contenido.
      */
-    public Contenido setDescripcion(final String valor) {
+    public Contenido setDescripcion(final String valor) throws IllegalArgumentException {
         if (valor == null || valor.isEmpty()) {
             throw new IllegalArgumentException("la descripción no puede ser vacía");
         }

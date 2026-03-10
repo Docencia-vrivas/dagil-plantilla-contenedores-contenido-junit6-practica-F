@@ -32,7 +32,7 @@ public class Contenedor {
      * @return El objeto que hay en la posición indicada.
      * @exception IllegalArgumentException Si la posición no es válida.
      */
-    public Contenido getPorPosicion(final int posicion) {
+    public Contenido getPorPosicion(final int posicion) throws IllegalArgumentException {
         if (posicion < 0 || posicion >= objetosContenidos.size()) {
             throw new IllegalArgumentException(
                     "La posición debe estar entre 0 y " + (objetosContenidos.size() - 1));
@@ -76,7 +76,7 @@ public class Contenedor {
      * @exception IllegalArgumentException Si el objeto es NULL.
      * @return La propia instancia de Contenedor.
      */
-    public Contenedor add(final Contenido objeto) {
+    public Contenedor add(final Contenido objeto) throws IllegalArgumentException {
         if (objeto == null) {
             throw new IllegalArgumentException("El objeto que se intenta añadir es NULL");
         }
