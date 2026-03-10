@@ -1,4 +1,4 @@
-package es.vrivas.dagil;
+package es.vrivas.dagil.Plantillas;
 
 /**
  * Clase Contenido.

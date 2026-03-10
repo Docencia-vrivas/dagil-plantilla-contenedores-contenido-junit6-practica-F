@@ -1,6 +1,8 @@
-package es.vrivas.dagil;
+package es.vrivas.dagil.Plantillas;
 
 import java.util.ArrayList;
+
+import es.vrivas.dagil.ContenedorInterface;
 
 /**
  * Clase Contenedor.

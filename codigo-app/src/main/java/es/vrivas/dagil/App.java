@@ -6,6 +6,9 @@
 
 package es.vrivas.dagil;
 
+import es.vrivas.dagil.Plantillas.ContenedorPlantilla;
+import es.vrivas.dagil.Plantillas.ContenidoPlantilla;
+
 /**
  * Clase principal de la aplicación.
  */
