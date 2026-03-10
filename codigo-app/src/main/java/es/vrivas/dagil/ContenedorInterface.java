@@ -37,5 +37,14 @@ public interface ContenedorInterface {
      * @return La propia instancia de Contenedor.
      */
     public Contenedor add(final Contenido objeto) throws IllegalArgumentException;
+
+    /**
+     * Elimina un objeto del contenedor.
+     * @param objeto Objeto a eliminar del contenedor.
+     * @exception IllegalArgumentException Si el objeto no está en el contenedor.
+     * @exception IllegalArgumentException Si el objeto es NULL.
+     * @return La propia instancia de Contenedor.
+     */
+    public Contenedor remove(final Contenido objeto) throws IllegalArgumentException;
 }
 
