@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Clase Contenedor.
  * Representa un contenedor de objetos de la clase Contenido.
  */
-public class Contenedor {
+public class Contenedor implements ContenedorInterface {
 
     /// ArrayList con el conjunto de objetos contenidos.
     private ArrayList<Contenido> objetosContenidos;
@@ -89,4 +89,25 @@ public class Contenedor {
         objetosContenidos.add(objeto);
         return this;
     }
+
+     /**
+     * Elimina un objeto del contenedor.
+     * @param objeto Objeto a eliminar del contenedor.
+     * @exception IllegalArgumentException Si el objeto no está en el contenedor.
+     * @exception IllegalArgumentException Si el objeto es NULL.
+     * @return La propia instancia de Contenedor.
+     */
+    public Contenedor remove(final Contenido objeto) throws IllegalArgumentException {
+        if (objeto == null) {
+            throw new IllegalArgumentException("Contenedor: remove: El objeto que se intenta eliminar es NULL");
+        }
+        if (!objetosContenidos.contains(objeto)) {
+            throw new IllegalArgumentException("Contenedor: remove: El objeto no está en el contenedor");
+        }
+        objetosContenidos.remove(objeto);
+        return this;
+    }
+
+    
+
 }
