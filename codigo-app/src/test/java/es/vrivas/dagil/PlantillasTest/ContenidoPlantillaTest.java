@@ -1,4 +1,4 @@
-package es.vrivas.dagil;
+package es.vrivas.dagil.PlantillasTest;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
