@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Clase de test para la clase Contenedor.
@@ -32,7 +33,6 @@ public class ContenedorTest {
         // Salta exepción si se intenta añadir un objeto nulo
         Contenedor contenedor = new Contenedor();
         try {
-            contenedor.add(null);
             contenedor.add(null);
             fail();
         } catch (IllegalArgumentException e) {
@@ -78,7 +78,7 @@ public class ContenedorTest {
     }
 
     /**
-     * El método add devuelve el mismo objeto.
+     * El método add devuelve el mismo objeto contenedor.
      */
     @Test
     public void add_devuelve_mismo_objeto() {
@@ -102,10 +102,81 @@ public class ContenedorTest {
                 .setId(1);
         Contenedor contenedor = new Contenedor()
                 .add(objeto);
-        assert contenedor.getPorId(1) != null;
+        assertTrue(contenedor.getPorId(1) != null);
         assertSame(contenedor.getPorId(1), objeto);
     }
 
+
+    // ---------------------------------------------------------------
+    // Tests para el método remove
+    // ---------------------------------------------------------------
+
+    /**
+     * Excepción si se intenta eliminar un objeto nulo.
+     */
+    @Test
+    public void remove_excepcion_si_objeto_nulo() {
+        // Salta exepción si se intenta añadir un objeto nulo
+        Contenedor contenedor = new Contenedor();
+        try {
+            contenedor.remove(null);
+            contenedor.add(null);
+            fail();
+        } catch (IllegalArgumentException e) {
+            System.err.println("Excepción lanzada: " + e.getMessage() + " para objeto nulo.");
+        }
+
+    }
+
+    /**
+     * Excepción si se intenta añadir un objeto que ya existe.
+     */
+    @Test
+    public void remove_excepcion_si_objeto_no_existe() {
+        try {
+            Contenedor contenedor = new Contenedor();
+            Contenido objeto = new Contenido()
+                    .setDescripcion("remove_excepcion_si_objeto_no_existe")
+                    .setId(1);
+            contenedor.remove(objeto);
+            fail();
+        } catch (IllegalArgumentException e) {
+            System.err.println("Excepción lanzada: " + e.getMessage() + " para objeto que no existía.");
+        }
+    }
+
+    /**
+     * El método remove devuelve el mismo objeto contenedor.
+     */
+    @Test
+    public void remove_devuelve_mismo_objeto() {
+        // El método debe devolver el mismo objeto
+        Contenedor contenedor = new Contenedor();
+        Contenido objeto = new Contenido()
+                .setDescripcion("Descripción en remove_devuelve_mismo_objeto")
+                .setId(1);
+        contenedor.add(objeto);
+        assertSame(contenedor, contenedor.remove(objeto));
+
+    }
+
+    /**
+     * El método remove elimina un objeto.
+     */
+    @Test
+    public void remove_elimina_objeto() {
+        // El objeto se ha añadido al contenedor
+        Contenido objeto = new Contenido()
+                .setDescripcion("Descripción en remove_elimina_objeto")
+                .setId(1);
+        Contenedor contenedor = new Contenedor()
+                .add(objeto);
+        // Primero compruebo que lo ha añadido.
+        assertSame(contenedor.getPorId(1), objeto);
+        // Ahora compruebo que lo ha borrado
+        contenedor.remove(objeto);
+        assertTrue( contenedor.getPorId(objeto.getId())==null );
+    }
     // ---------------------------------------------------------------
     // Tests para el método getNumObjetosContenidos
     // ---------------------------------------------------------------
