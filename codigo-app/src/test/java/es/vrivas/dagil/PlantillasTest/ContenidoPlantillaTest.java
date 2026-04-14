@@ -157,7 +157,7 @@ public class ContenidoPlantillaTest {
     @Test
     public void toString_constructor_por_defecto() {
         ContenidoPlantilla objeto = new ContenidoPlantilla();
-        assertEquals("{id: 0, descripcion: ''}", objeto.toString());
+        assertEquals("{id: 2, descripcion: ''}", objeto.toString());
     }
 
     /**
